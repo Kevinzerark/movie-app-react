@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+:root {
+  /* Fundo */
+  --color-bg-gradient-start: #1a1a1a; /* gray-900 */
+  --color-bg-gradient-end: #2d2d2d;   /* gray-800 */
+
+  /* Cards */
+  --color-card-bg: rgba(31, 31, 31, 0.9); /* gray-800/90 */
+  --color-card-shadow: rgba(0, 0, 0, 0.5);
+
+  /* Botões */
+  --color-btn-primary: #2563eb; /* blue-600 */
+  --color-btn-primary-hover: #1d4ed8; /* blue-700 */
+  --color-btn-fav-red: #dc2626; /* red-600 */
+  --color-btn-fav-red-hover: #b91c1c; /* red-700 */
+  --color-btn-fav-green: #16a34a; /* green-600 */
+  --color-btn-fav-green-hover: #15803d; /* green-700 */
+
+  /* Texto */
+  --color-text-primary: #ffffff; /* white */
+  --color-text-note: #facc15; /* yellow-300 */
+
+  /* Input */
+  --color-input-bg: #f3f4f6; /* gray-100 */
+  --color-input-text: #000000; /* black */
+  --color-input-focus-ring: #3b82f6; /* blue-500 */
+}
