@@ -14,7 +14,7 @@ function App() {
   const [favorites, setFavorites] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [showFavorites, setShowFavorites] = useState(false); // controla exibição dos favoritos
+  const [showFavorites, setShowFavorites] = useState(false);
 
   // Busca filmes populares da API
   const fetchPopularMovies = async (pageNum = 1) => {
@@ -124,34 +124,30 @@ function App() {
           toggleFavorite={toggleFavorite}
           isFavorite={isFavorite}
         />
-      ) : showFavorites ? (
-        favorites.length > 0 ? (
-          <MovieGrid
-            movies={favorites}
-            fetchMovieDetails={fetchMovieDetails}
-            toggleFavorite={toggleFavorite}
-            isFavorite={isFavorite}
-          />
-        ) : (
-          <p
-            className="text-center mt-10 font-semibold"
-            style={{
-              color: "var(--color-note-text)",
-            }}
-          >
-            Nenhum filme favoritado ainda.
-          </p>
-        )
-      ) : (
+      ) : moviesToShow.length > 0 ? (
         <>
           <MovieGrid
-            movies={movies}
+            movies={moviesToShow}
             fetchMovieDetails={fetchMovieDetails}
             toggleFavorite={toggleFavorite}
             isFavorite={isFavorite}
           />
           {loading && <Loader />}
         </>
+      ) : showFavorites ? (
+        <p
+          className="text-center mt-10 font-semibold"
+          style={{ color: "var(--color-note-text)" }}
+        >
+          Nenhum filme favoritado ainda.
+        </p>
+      ) : (
+        <p
+          className="text-center mt-10 font-semibold"
+          style={{ color: "var(--color-note-text)" }}
+        >
+          Nenhum filme encontrado.
+        </p>
       )}
     </div>
   );
